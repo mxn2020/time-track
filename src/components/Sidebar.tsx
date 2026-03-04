@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { Clock, CalendarDays, PieChart, Briefcase } from "lucide-react";
+import { Clock, CalendarDays, PieChart } from "lucide-react";
+import { Avatar } from "@geenius-ui/react-css";
 import ThemeToggle from "./ThemeToggle";
+
 export default function Sidebar() {
     const loc = useLocation();
     const links = [
@@ -34,7 +36,7 @@ export default function Sidebar() {
 
         <div style={{ padding: "var(--space-4)", borderTop: "2px solid var(--color-border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                <div style={{ width: 32, height: 32, borderRadius: "var(--radius-sm)", background: "var(--color-text-primary)", color: "var(--color-bg-primary)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontFamily: "var(--font-mono)" }}>MN</div>
+                <Avatar fallback="MN" size="sm" />
                 <div style={{ fontWeight: 700, fontSize: "14px" }}>Workspace</div>
             </div>
             <ThemeToggle />

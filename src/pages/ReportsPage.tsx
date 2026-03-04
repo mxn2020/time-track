@@ -1,4 +1,5 @@
-import { BarChart2, PieChart as PieIcon, Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
+import { Button, Card } from "@geenius-ui/react-css";
 
 export default function ReportsPage() {
     const projects = [
@@ -15,22 +16,24 @@ export default function ReportsPage() {
                 <p style={{ color: "var(--color-text-secondary)", fontSize: "15px" }}>Analyze where your time went this month.</p>
             </div>
             <div style={{ display: "flex", gap: "var(--space-3)" }}>
-                <button className="btn btn-ghost" style={{ borderColor: "var(--color-border)" }}><Calendar size={16} /> This Month</button>
-                <button className="btn btn-primary">Export CSV</button>
+                <Button variant="outline" icon={<Calendar size={16} />}>This Month</Button>
+                <Button variant="primary">Export CSV</Button>
             </div>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-6)", marginBottom: "var(--space-6)" }}>
-            <div className="card" style={{ padding: "var(--space-6)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: 300 }}>
-                <div style={{ width: 200, height: 200, borderRadius: "50%", background: "conic-gradient(var(--color-accent-primary) 0% 65%, var(--color-info) 65% 85%, var(--color-warning) 85% 96%, var(--color-text-tertiary) 96% 100%)", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div style={{ width: 140, height: 140, borderRadius: "50%", background: "var(--color-bg-card)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ fontSize: "14px", fontWeight: 600, color: "var(--color-text-secondary)" }}>Total Hours</span>
-                        <span className="mono" style={{ fontSize: "28px", fontWeight: 700 }}>223h</span>
+            <Card padding="lg" className="chart-card">
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: 300 }}>
+                    <div style={{ width: 200, height: 200, borderRadius: "50%", background: "conic-gradient(var(--color-accent-primary) 0% 65%, var(--color-info) 65% 85%, var(--color-warning) 85% 96%, var(--color-text-tertiary) 96% 100%)", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <div style={{ width: 140, height: 140, borderRadius: "50%", background: "var(--color-bg-card)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                            <span style={{ fontSize: "14px", fontWeight: 600, color: "var(--color-text-secondary)" }}>Total Hours</span>
+                            <span className="mono" style={{ fontSize: "28px", fontWeight: 700 }}>223h</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Card>
 
-            <div className="card" style={{ padding: "var(--space-6)" }}>
+            <Card padding="lg">
                 <h2 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "var(--space-4)" }}>Projects Breakdown</h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
                     {projects.map((p, i) => (
@@ -46,8 +49,8 @@ export default function ReportsPage() {
                         </div>
                     ))}
                 </div>
-                <button className="btn-ghost" style={{ width: "100%", marginTop: "var(--space-6)", padding: 12, fontWeight: 600, color: "var(--color-text-secondary)" }}>View Detailed Report <ArrowRight size={16} /></button>
-            </div>
+                <Button variant="ghost" style={{ width: "100%", marginTop: "var(--space-6)" }}>View Detailed Report <ArrowRight size={16} /></Button>
+            </Card>
         </div>
     </div>);
 }

@@ -1,4 +1,5 @@
 import { ChevronLeft, ChevronRight, Save } from "lucide-react";
+import { Button, Card, Input } from "@geenius-ui/react-css";
 
 export default function WeeklyTimesheetPage() {
     const days = ["Mon, Oct 26", "Tue, Oct 27", "Wed, Oct 28", "Thu, Oct 29", "Fri, Oct 30", "Sat, Oct 31", "Sun, Nov 1"];
@@ -16,18 +17,18 @@ export default function WeeklyTimesheetPage() {
             <div>
                 <h1 style={{ fontSize: "var(--font-size-xl)", fontWeight: 700, marginBottom: 4 }}>Weekly Timesheet</h1>
                 <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)" }}>
-                    <button className="btn btn-sm" style={{ padding: "4px" }}><ChevronLeft size={16} /></button>
+                    <Button variant="outline" size="sm" icon={<ChevronLeft size={16} />} />
                     <span style={{ fontWeight: 600, fontSize: "15px", color: "var(--color-text-secondary)" }}>Oct 26 - Nov 1, 2026</span>
-                    <button className="btn btn-sm" style={{ padding: "4px" }}><ChevronRight size={16} /></button>
+                    <Button variant="outline" size="sm" icon={<ChevronRight size={16} />} />
                 </div>
             </div>
             <div style={{ display: "flex", gap: "var(--space-3)", alignItems: "center" }}>
                 <div className="mono" style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text-secondary)" }}>Total: {totalWeek}h</div>
-                <button className="btn btn-primary"><Save size={16} /> Save Timesheet</button>
+                <Button variant="primary" icon={<Save size={16} />}>Save Timesheet</Button>
             </div>
         </div>
 
-        <div className="card" style={{ overflow: "auto" }}>
+        <Card padding="none">
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
                     <tr style={{ background: "var(--color-bg-secondary)", borderBottom: "2px solid var(--color-border)" }}>
@@ -42,7 +43,7 @@ export default function WeeklyTimesheetPage() {
                             <td style={{ padding: "16px", fontWeight: 600, fontSize: "15px" }}>{p.name}</td>
                             {p.hours.map((h, j) => (
                                 <td key={j} style={{ padding: "12px" }}>
-                                    <input type="text" defaultValue={h} style={{ width: "100%", textAlign: "center", padding: "8px", border: "1px solid var(--color-border)", borderRadius: "var(--radius-sm)", background: "var(--color-bg-primary)", color: "var(--color-text-primary)", fontFamily: "var(--font-mono)", fontWeight: 600 }} />
+                                    <Input type="text" defaultValue={h} style={{ width: "100%", textAlign: "center", fontFamily: "var(--font-mono)", fontWeight: 600 }} />
                                 </td>
                             ))}
                             <td style={{ padding: "16px", textAlign: "right", fontWeight: 700, fontFamily: "var(--font-mono)" }}>
@@ -59,6 +60,6 @@ export default function WeeklyTimesheetPage() {
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </Card>
     </div>);
 }
