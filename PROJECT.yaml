@@ -1,5 +1,6 @@
-id: 5e401d59-95c0-4086-9c67-9d48f3afce2c
 name: time-track
+project_scope: main
+project_type: standalone
 description: React + TypeScript + Vite
 tier: prototype
 lane: oss
@@ -9,5 +10,6 @@ stack: [typescript, react, convex, vite]
 repo: "https://github.com/mxn2020/time-track"
 deploy_url: null
 last_active: 2026-02-25
-tags: []
-notes: 
+tags: [time-tracking, productivity, billing, hours, freelance, projects, tools]
+notes: null
+id: 5e401d59-95c0-4086-9c67-9d48f3afce2c
