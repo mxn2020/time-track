@@ -1,0 +1,16 @@
+name: time-track
+project_scope: main
+project_type: standalone
+description: Time tracking application with project-based logging
+tier: prototype
+lane: open-source
+priority: medium
+oss: true
+stack: ["typescript", "react", "vite", "convex"]
+repo: "https://github.com/mxn2020/time-track"
+deploy_url: null
+last_active: 2026-03-11
+tags: ["time-track", "convex", "react", "open-source", "ai-tools"]
+notes: null
+id: null
+category: oss-tool
