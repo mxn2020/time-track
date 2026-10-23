@@ -44,7 +44,7 @@
   },
   "description": "Time tracking application with project-based logging",
   "author": "Mehdi Nabhani",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": [
     "time",
     "track",
